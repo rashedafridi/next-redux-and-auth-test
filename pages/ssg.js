@@ -12,8 +12,12 @@ export function getStaticProps() {
   return {
     props: {
       initialReduxState: {
-        lastUpdate: Date.now(),
-        light: false,
+        counter:{
+                  lastUpdate: Date.now(),
+                  light: true,
+                  count:99,
+               }
+        
       },
     },
   }

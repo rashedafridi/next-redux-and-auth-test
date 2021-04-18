@@ -14,7 +14,7 @@ export default function Page() {
       light: true,
       lastUpdate: Date.now(),
     })
-  }, 1000)
+  }, 5000)
 
   return (
     <>

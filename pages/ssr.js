@@ -1,5 +1,5 @@
 import Page from '../components/page'
-import { initializeStore } from '../store'
+import { initializeStore } from '../store/store'
 
 export default function SSR() {
   return <Page />
@@ -17,6 +17,18 @@ export function getServerSideProps() {
     light: false,
     lastUpdate: Date.now(),
   })
+  try {
+    dispatch({
+    type: 'INCREMENT',
+  })
+  } catch (error) {
+    console.log(error)
+  }
+  
 
-  return { props: { initialReduxState: reduxStore.getState() } }
+  // return { props: { initialReduxState: reduxStore.getState() } }
+  const redux= { ...reduxStore.getState() }
+  // redux.auth.token="rashedafridi"
+  console.log(redux)
+  return { props: { initialReduxState: redux } }
 }

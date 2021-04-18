@@ -1,16 +1,21 @@
 import { useSelector, useDispatch } from 'react-redux'
 
 const useCounter = () => {
-  const count = useSelector((state) => state.count)
+  const count = useSelector((state) => state.counter.count)
   const dispatch = useDispatch()
   const increment = () =>
     dispatch({
       type: 'INCREMENT',
     })
   const decrement = () =>
+    {
+      const cat = localStorage.getItem('ras');
+      console.log("[cunt-ras]",cat)
+      const cok = document.cookie.match('token');
+      console.log("[cunt-cok]",cok)
     dispatch({
       type: 'DECREMENT',
-    })
+    })}
   const reset = () =>
     dispatch({
       type: 'RESET',

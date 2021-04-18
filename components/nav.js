@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 const Nav = () => {
+  console.log("run NEV")
   return (
     <nav>
       <Link href="/">
@@ -11,6 +12,9 @@ const Nav = () => {
       </Link>
       <Link href="/ssr">
         <a>SSR</a>
+      </Link>
+      <Link href="/login">
+        <a>login</a>
       </Link>
       <style jsx>
         {`
